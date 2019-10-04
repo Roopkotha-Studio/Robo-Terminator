@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 380b0b5021b691446aa16fffd097a3d6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - healthText: {instanceID: 0}
+  - damageOverlay: {instanceID: 0}
+  - message: {instanceID: 0}
+  - blood: {fileID: 1240250018707908, guid: 5656e7ea1f1a75d4c895547ec2b824b3, type: 3}
+  - bloodPoint: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

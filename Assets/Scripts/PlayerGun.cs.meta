@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 00991149e4dd7594a960af3bc198570d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - ammoText: {instanceID: 0}
+  - fireSound: {instanceID: 0}
+  - muzzle: {instanceID: 0}
+  - blood: {fileID: 1240250018707908, guid: 5656e7ea1f1a75d4c895547ec2b824b3, type: 3}
+  - bulletHole: {fileID: 46081792123162159, guid: 98667270791b86f4aba6725c5a045197,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

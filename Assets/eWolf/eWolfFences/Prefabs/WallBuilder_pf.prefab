@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1001837562112640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4765542559467734}
+  - component: {fileID: 114954714331749136}
+  m_Layer: 0
+  m_Name: WallBuilder_pf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4765542559467734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001837562112640}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114954714331749136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001837562112640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42eccce1d9ab16f41a8ea9d8511d4c0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BuildingUnits:
+    Width: 10
+    Height: 8
+  MaterialHolders:
+    BrickWall:
+    - {fileID: 2100000, guid: bdc9a72bf979e094f8bec468a4b7f411, type: 2}
+    - {fileID: 2100000, guid: 62a865ffecedcb341bcf6f6c6e26dcd9, type: 2}
+    Hedge:
+    - {fileID: 2100000, guid: 33e65e93b557c9f4dad7a49fab5379bc, type: 2}
+    WoodenFence:
+    - {fileID: 2100000, guid: 17c69f9228a9f2345be375eb34b4189d, type: 2}
+    - {fileID: 2100000, guid: 8d7aded24d173494db6683558830099b, type: 2}
+    - {fileID: 2100000, guid: 7350bfa81738b36478fd0a1aa2fb9c55, type: 2}
+    BrickWallWithTowers:
+    - {fileID: 2100000, guid: bdc9a72bf979e094f8bec468a4b7f411, type: 2}
+    MetalRailings:
+    - {fileID: 2100000, guid: fbf7bf2245a782045936f19ce51f83a9, type: 2}
+    KneeRailFence:
+    - {fileID: 2100000, guid: b470c3d612c8bcf44aede10009bb6e63, type: 2}
+    - {fileID: 2100000, guid: 13615cbbd56698c4ab573986922a241b, type: 2}
+    FarmFence:
+    - {fileID: 2100000, guid: 13615cbbd56698c4ab573986922a241b, type: 2}
+    - {fileID: 2100000, guid: b470c3d612c8bcf44aede10009bb6e63, type: 2}
+    PicketFence:
+    - {fileID: 2100000, guid: da875781f4a220642988ceab59badecc, type: 2}
+    - {fileID: 2100000, guid: 93b72459024bf6d45bcf9da488820abf, type: 2}
+    - {fileID: 2100000, guid: 7fb1a21d181ded344b90d09deaa7bf03, type: 2}
+    - {fileID: 2100000, guid: 9c6834222013983488cfcb9f0087a2f5, type: 2}
+  Lighting:
+    BakedLighting: 0
+    HardAngle: 88
+    PackMargin: 4
+    AngleError: 8
+    AreaError: 15
