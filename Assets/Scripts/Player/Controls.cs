@@ -26,9 +26,25 @@ public class Controls : IInputActionCollection
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Fire"",
+                    ""name"": ""Turn"",
                     ""type"": ""Button"",
                     ""id"": ""70454bc4-e8e1-4eba-89f7-c9916880165e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""14ee231d-961d-4823-ae8b-71902cac7462"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchWeapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""f93f044f-7a16-4a2f-b0e1-e1d442196602"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
@@ -53,6 +69,17 @@ public class Controls : IInputActionCollection
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9804ded9-9f9e-480e-9f95-dacdeea52389"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -168,57 +195,68 @@ public class Controls : IInputActionCollection
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Analog Stick"",
-                    ""id"": ""1d97bc39-eb8e-44a6-82ef-cc8685d300a6"",
+                    ""name"": """",
+                    ""id"": ""66920c19-210a-4aec-a6cc-53512358c566"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""95bc5213-8d3c-4ed6-90fd-ff2eee8f3b0f"",
+                    ""path"": ""<Joystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""44e31f00-5566-4540-9c6d-a34ca7c6864f"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Turn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""3f5c02b0-ea01-431a-82f4-ddb8d8c307d2"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard & Mouse"",
-                    ""action"": ""Move"",
+                    ""groups"": """",
+                    ""action"": ""SwitchWeapon"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""b13b6d23-5ebe-45c9-a247-5ac8da5c3be6"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""5a8e33b8-98ec-4fd3-b9fc-2a5256ebba96"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""left"",
-                    ""id"": ""4ab7416a-d5d9-4e6f-8adc-0537c6c2157c"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""id"": ""7045ee9a-9f41-42d4-9e71-d9490abfac86"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
+                    ""action"": ""SwitchWeapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""fb681e0f-9896-4865-a4a8-7ac79ea2fce9"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""id"": ""ad2e964b-e8d0-4199-9c33-9c700e89a3c3"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
+                    ""groups"": """",
+                    ""action"": ""SwitchWeapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -252,13 +290,26 @@ public class Controls : IInputActionCollection
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Joystick"",
+            ""bindingGroup"": ""Joystick"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Joystick>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+        m_Player_Turn = m_Player.FindAction("Turn", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+        m_Player_SwitchWeapon = m_Player.FindAction("SwitchWeapon", throwIfNotFound: true);
     }
 
     ~Controls()
@@ -309,13 +360,17 @@ public class Controls : IInputActionCollection
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_Turn;
     private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_SwitchWeapon;
     public struct PlayerActions
     {
         private Controls m_Wrapper;
         public PlayerActions(Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputAction @Turn => m_Wrapper.m_Player_Turn;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        public InputAction @SwitchWeapon => m_Wrapper.m_Player_SwitchWeapon;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -328,9 +383,15 @@ public class Controls : IInputActionCollection
                 Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                 Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                 Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                Turn.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurn;
+                Turn.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurn;
+                Turn.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurn;
                 Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                SwitchWeapon.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchWeapon;
+                SwitchWeapon.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchWeapon;
+                SwitchWeapon.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchWeapon;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -338,9 +399,15 @@ public class Controls : IInputActionCollection
                 Move.started += instance.OnMove;
                 Move.performed += instance.OnMove;
                 Move.canceled += instance.OnMove;
+                Turn.started += instance.OnTurn;
+                Turn.performed += instance.OnTurn;
+                Turn.canceled += instance.OnTurn;
                 Fire.started += instance.OnFire;
                 Fire.performed += instance.OnFire;
                 Fire.canceled += instance.OnFire;
+                SwitchWeapon.started += instance.OnSwitchWeapon;
+                SwitchWeapon.performed += instance.OnSwitchWeapon;
+                SwitchWeapon.canceled += instance.OnSwitchWeapon;
             }
         }
     }
@@ -363,9 +430,20 @@ public class Controls : IInputActionCollection
             return asset.controlSchemes[m_GamepadSchemeIndex];
         }
     }
+    private int m_JoystickSchemeIndex = -1;
+    public InputControlScheme JoystickScheme
+    {
+        get
+        {
+            if (m_JoystickSchemeIndex == -1) m_JoystickSchemeIndex = asset.FindControlSchemeIndex("Joystick");
+            return asset.controlSchemes[m_JoystickSchemeIndex];
+        }
+    }
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnTurn(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnSwitchWeapon(InputAction.CallbackContext context);
     }
 }
