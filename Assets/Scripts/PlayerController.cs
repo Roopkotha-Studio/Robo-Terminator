@@ -30,7 +30,8 @@ public class PlayerController : MonoBehaviour
     private long health = 0;
     private Vector2 movement;
     private bool damaged = false;
-    private float timeTillHazardDamage = 0;
+    private Vector3 oldMousePosition;
+    private Vector3 newMousePosition;
 
     void Start()
     {
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
     {
         input.Enable();
         input.Player.Move.performed += context => move(context.ReadValue<Vector2>());
+        input.Player.Turn.performed += context => turn(context.ReadValue<Vector2>());
         input.Player.Move.canceled += context => move(Vector2.zero);
     }
 
@@ -58,6 +60,7 @@ public class PlayerController : MonoBehaviour
     {
         input.Disable();
         input.Player.Move.performed -= context => move(context.ReadValue<Vector2>());
+        input.Player.Turn.performed -= context => turn(context.ReadValue<Vector2>());
         input.Player.Move.canceled -= context => move(Vector2.zero);
     }
 
@@ -70,6 +73,7 @@ public class PlayerController : MonoBehaviour
         {
             health = maxHealth;
         }
+        oldMousePosition = Input.mousePosition;
         if (health <= 0)
         {
             GameController.instance.gameOver = true;
@@ -81,22 +85,24 @@ public class PlayerController : MonoBehaviour
         }
         if (!GameController.instance.gameOver && !GameController.instance.won)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit, 100, LayerMask.GetMask("Floor")))
+            if (newMousePosition != oldMousePosition)
             {
-                Vector3 hitPoint = hit.point - transform.position;
-                hitPoint.y = 0;
-                transform.rotation = Quaternion.LookRotation(hitPoint);
+                Ray ray = Camera.main.ScreenPointToRay(newMousePosition);
+                if (Physics.Raycast(ray, out RaycastHit hit, 100, LayerMask.GetMask("Floor")))
+                {
+                    Vector3 hitPoint = hit.point - transform.position;
+                    hitPoint.y = 0;
+                    transform.rotation = Quaternion.LookRotation(hitPoint);
+                }
             }
-            if (movement.magnitude > 0)
+            if (movement.magnitude != 0)
             {
-                characterController.SimpleMove(new Vector3(1, 0, 1).normalized * speed * Time.deltaTime);
+                characterController.SimpleMove(new Vector3(movement.x, 0, movement.y).normalized * speed);
                 animator.SetBool("Walking", true);
             } else
             {
                 animator.SetBool("Walking", false);
             }
-            print(movement);
         }
         if (GameController.instance.gameOver || GameController.instance.won) animator.SetBool("Walking", false);
         if (damaged)
@@ -117,6 +123,11 @@ public class PlayerController : MonoBehaviour
         healthText.text = "Health: " + health + "/" + maxHealth;
     }
 
+    void LateUpdate()
+    {
+        newMousePosition = Input.mousePosition;
+    }
+
     void OnDrawGizmos()
     {
         Gizmos.DrawIcon(transform.position, "soldier.png", false);
@@ -125,17 +136,28 @@ public class PlayerController : MonoBehaviour
     #region Input Functions
     void move(Vector2 direction)
     {
-        movement = direction;
-        /*
-        if (invertHorizontal) movement = new Vector2(-movement.x, movement.y);
-        if (invertVertical) movement = new Vector2(movement.x, -movement.y);
+        float x = direction.x;
+        float y = direction.y;
+        if (invertHorizontal) x = -x;
+        if (invertVertical) y = -y;
         if (flipMovement)
         {
-            float x = movement.x;
-            float y = movement.y;
-            movement = new Vector2(y, x);
-        }*/
+            float flipX = y;
+            float flipY = x;
+            x = flipX;
+            y = flipY;
+        }
+        movement = new Vector2(x, y);
         print(movement);
+    }
+
+    void turn(Vector2 direction)
+    {
+        Vector2 context = direction;
+        Vector3 lookDirection = new Vector3(context.x, context.y);
+        Vector3 lookRotation = Camera.main.transform.TransformDirection(lookDirection);
+        lookRotation = Vector3.ProjectOnPlane(lookRotation, Vector3.up);
+        if (lookRotation != Vector3.zero) transform.rotation = Quaternion.LookRotation(lookRotation);
     }
     #endregion
 
