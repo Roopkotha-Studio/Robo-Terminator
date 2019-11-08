@@ -14,7 +14,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Turn",
+                    "name": "Run",
                     "type": "Button",
                     "id": "70454bc4-e8e1-4eba-89f7-c9916880165e",
                     "expectedControlType": "",
@@ -22,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Fire",
+                    "name": "Turn",
                     "type": "Button",
                     "id": "14ee231d-961d-4823-ae8b-71902cac7462",
                     "expectedControlType": "",
@@ -30,9 +30,25 @@
                     "interactions": ""
                 },
                 {
-                    "name": "SwitchWeapon",
+                    "name": "Fire",
                     "type": "Button",
                     "id": "f93f044f-7a16-4a2f-b0e1-e1d442196602",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SwitchWeaponLeft",
+                    "type": "Button",
+                    "id": "c88bcc99-42ba-4370-ac2e-b311156a430c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SwitchWeaponRight",
+                    "type": "Button",
+                    "id": "86eaeeec-9afa-4f5b-a7b8-9d0ca3238c58",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
@@ -57,17 +73,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9804ded9-9f9e-480e-9f95-dacdeea52389",
-                    "path": "<Joystick>/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Joystick",
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -216,37 +221,81 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "2D Vector",
-                    "id": "3f5c02b0-ea01-431a-82f4-ddb8d8c307d2",
-                    "path": "2DVector",
+                    "name": "",
+                    "id": "40af566a-648c-4bb1-b655-bec68ca2306a",
+                    "path": "<Keyboard>/leftBracket",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "SwitchWeapon",
-                    "isComposite": true,
+                    "groups": "Keyboard & Mouse",
+                    "action": "SwitchWeaponLeft",
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "left",
-                    "id": "7045ee9a-9f41-42d4-9e71-d9490abfac86",
+                    "name": "",
+                    "id": "4a40f207-9a30-4208-9c73-2f8fd5f9fde1",
                     "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "SwitchWeapon",
+                    "action": "SwitchWeaponLeft",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "right",
-                    "id": "ad2e964b-e8d0-4199-9c33-9c700e89a3c3",
+                    "name": "",
+                    "id": "9760105c-1987-4cd7-a109-07b09a1c3b17",
+                    "path": "<Keyboard>/rightBracket",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "SwitchWeaponRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "112cc71a-71a1-45a2-99d7-f72f3f491d81",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "SwitchWeapon",
+                    "groups": "Gamepad",
+                    "action": "SwitchWeaponRight",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cdb999c8-64a1-4a0d-92cb-ee6644e90d26",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f81cd31a-d22a-4b97-8016-d240bcbadff6",
+                    "path": "<Gamepad>/leftStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f6ac6dc4-e93b-4fc7-b876-7a2f115fc1da",
+                    "path": "<Joystick>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
