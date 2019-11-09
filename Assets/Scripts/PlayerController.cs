@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private long maxHealth = 100;
     [SerializeField] private float speed = 6;
+    [SerializeField] private float runSpeed = 8.5f;
     [Tooltip("Inverts horizontal movement.")] [SerializeField] private bool invertHorizontal = false;
     [Tooltip("Inverts vertical movement.")] [SerializeField] private bool invertVertical = false;
     [SerializeField] private bool flipMovement = false;
@@ -19,17 +20,23 @@ public class PlayerController : MonoBehaviour
     public bool isHealthFull = true;
 
     [Header("Setup")]
+    public GameObject[] weapons = new GameObject[0];
     [SerializeField] private GameObject blood = null;
     [SerializeField] private Transform bloodPoint = null;
 
     private CharacterController characterController;
     private Animator animator;
     private AudioSource audioSource;
-    private PlayerGun playerGun;
     private Controls input;
     private long health = 0;
-    private Vector2 movement;
+    private float walkSpeed = 0;
+    [HideInInspector] public int weapon = 0;
+    private bool running = false;
     private bool damaged = false;
+    [HideInInspector] public bool hasPistol = true;
+    [HideInInspector] public bool hasAssaultRifle = false;
+    [HideInInspector] public bool hasShotgun = false;
+    private Vector2 movement;
     private Vector3 oldMousePosition;
     private Vector3 newMousePosition;
 
@@ -38,8 +45,12 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        playerGun = GetComponent<PlayerGun>();
         health = maxHealth;
+        walkSpeed = speed;
+        weapon = 0;
+        hasPistol = true;
+        hasAssaultRifle = true;
+        hasShotgun = true;
         resetMessage();
     }
 
@@ -52,16 +63,24 @@ public class PlayerController : MonoBehaviour
     {
         input.Enable();
         input.Player.Move.performed += context => move(context.ReadValue<Vector2>());
+        input.Player.Run.performed += context => run(true);
         input.Player.Turn.performed += context => turn(context.ReadValue<Vector2>());
+        input.Player.SwitchWeaponLeft.performed += context => switchWeapon(false);
+        input.Player.SwitchWeaponRight.performed += context => switchWeapon(true);
         input.Player.Move.canceled += context => move(Vector2.zero);
+        input.Player.Run.canceled += context => run(false);
     }
 
     void OnDisable()
     {
         input.Disable();
         input.Player.Move.performed -= context => move(context.ReadValue<Vector2>());
+        input.Player.Run.performed += context => run(true);
         input.Player.Turn.performed -= context => turn(context.ReadValue<Vector2>());
+        input.Player.SwitchWeaponLeft.performed -= context => switchWeapon(false);
+        input.Player.SwitchWeaponRight.performed -= context => switchWeapon(true);
         input.Player.Move.canceled -= context => move(Vector2.zero);
+        input.Player.Run.canceled -= context => run(false);
     }
 
     void Update()
@@ -80,7 +99,7 @@ public class PlayerController : MonoBehaviour
             if (Camera.main.GetComponent<CameraFollow>()) Camera.main.GetComponent<CameraFollow>().enabled = false;
             foreach (Transform mesh in transform)
             {
-                if (mesh.GetComponent<SkinnedMeshRenderer>()) mesh.GetComponent<SkinnedMeshRenderer>().enabled = false;
+                if (mesh.GetComponent<Renderer>()) mesh.GetComponent<Renderer>().enabled = false;
             }
         }
         if (!GameController.instance.gameOver && !GameController.instance.won)
@@ -107,10 +126,10 @@ public class PlayerController : MonoBehaviour
         if (GameController.instance.gameOver || GameController.instance.won) animator.SetBool("Walking", false);
         if (damaged)
         {
-            damageOverlay.color = new Color(1, 0, 0, 1);
+            damageOverlay.color = new Color(1, 0, 0, 0.25f);
         } else
         {
-            damageOverlay.color = Color.Lerp(damageOverlay.color, new Color(1, 0, 0, 0), 7.5f * Time.deltaTime);
+            damageOverlay.color = Color.Lerp(damageOverlay.color, new Color(1, 0, 0, 0), 1);
         }
         damaged = false;
         if (health < maxHealth)
@@ -148,16 +167,47 @@ public class PlayerController : MonoBehaviour
             y = flipY;
         }
         movement = new Vector2(x, y);
-        print(movement);
+    }
+
+    void run(bool state)
+    {
+        if (state)
+        {
+            speed = runSpeed;
+        } else
+        {
+            speed = walkSpeed;
+        }
     }
 
     void turn(Vector2 direction)
     {
-        Vector2 context = direction;
-        Vector3 lookDirection = new Vector3(context.x, context.y);
+        Vector3 lookDirection = new Vector3(direction.x, direction.y, 0);
         Vector3 lookRotation = Camera.main.transform.TransformDirection(lookDirection);
         lookRotation = Vector3.ProjectOnPlane(lookRotation, Vector3.up);
         if (lookRotation != Vector3.zero) transform.rotation = Quaternion.LookRotation(lookRotation);
+    }
+
+    void switchWeapon(bool state)
+    {
+        if (weapon > 0 || weapon < weapons.Length - 1)
+        {
+            int previous = weapon;
+            if (!state) //Left
+            {
+                --weapon;
+            } else //Right
+            {
+                ++weapon;
+            }
+            if (weapon == 1 && !hasAssaultRifle) weapon = previous;
+            if (weapon == 2 && !hasShotgun) weapon = previous;
+            if (weapon < 0) weapon = 0;
+            if (weapon > weapons.Length - 1) weapon = weapons.Length - 1;
+            foreach (GameObject wep in weapons) wep.SetActive(false);
+            weapons[weapon].SetActive(true);
+            print("Mouse Namer " + weapons[weapon].name);
+        }
     }
     #endregion
 
