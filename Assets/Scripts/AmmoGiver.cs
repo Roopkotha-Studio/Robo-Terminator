@@ -3,6 +3,7 @@
 public class AmmoGiver : MonoBehaviour
 {
     [SerializeField] private int ammo = 30;
+    [SerializeField] private int weapon = 0;
 
     void OnDrawGizmos()
     {
@@ -11,24 +12,10 @@ public class AmmoGiver : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && other.GetComponent<PlayerController>() && other.GetComponent<PlayerGun>())
+        if (other.CompareTag("Player"))
         {
-            if (CompareTag("Pistol"))
-            {
-                other.GetComponent<PlayerGun>().pistol.ammo += ammo;
-                other.GetComponent<PlayerController>().showMessage("You got " + ammo + " Bullets!");
-            } else if (CompareTag("AssaultRifle"))
-            {
-                other.GetComponent<PlayerGun>().assaultRifle.ammo += ammo;
-                other.GetComponent<PlayerController>().showMessage("You got " + ammo + " Bullets!");
-            } else if (CompareTag("Shotgun"))
-            {
-                other.GetComponent<PlayerGun>().shotgun.ammo += ammo;
-                other.GetComponent<PlayerController>().showMessage("You got " + ammo + " Shells!");
-            } else
-            {
-                Debug.LogError("Invalid weapon type");
-            }
+            PlayerController playerController = other.GetComponent<PlayerController>();
+            if (playerController) playerController.weapons[weapon].GetComponent<PlayerGun>().ammo += ammo;
             Destroy(gameObject);
         }
     }
