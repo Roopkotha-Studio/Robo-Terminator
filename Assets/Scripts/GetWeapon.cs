@@ -25,6 +25,7 @@ public class GetWeapon : MonoBehaviour
     {
         if (other.CompareTag("Player") && other.GetComponent<PlayerController>() && other.GetComponent<PlayerGun>())
         {
+            /*
             if (CompareTag("Pistol"))
             {
                 if (!other.GetComponent<PlayerGun>().hasPistol)
@@ -74,6 +75,7 @@ public class GetWeapon : MonoBehaviour
                 valid = false;
                 Debug.LogError("Invalid weapon type");
             }
+            */
             if (valid) Destroy(gameObject);
         }
     }
