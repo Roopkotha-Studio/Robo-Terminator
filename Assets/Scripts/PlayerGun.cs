@@ -8,7 +8,7 @@ public class PlayerGun : MonoBehaviour
     [SerializeField] private float RPM = 750;
     [SerializeField] private float spread = 0.05f;
     public int ammo = 50;
-    [SerializeField] private int maxAmmo = 200;
+    public int maxAmmo = 200;
     [Tooltip("Amount of shots in a bullet.")] [SerializeField] private int shots = 1;
     [Tooltip("Amount of bullets to fire in a shot.")] [SerializeField] private int bulletsFired = 1;
     [SerializeField] private bool auto = false;
@@ -61,33 +61,57 @@ public class PlayerGun : MonoBehaviour
 
     void Update()
     {
-        ammoText.text = "Ammo: " + ammo + "/" + maxAmmo;
+        ammoText.text = ammo + " / " + maxAmmo;
+        if (ammo <= 0)
+        {
+            ammoText.color = new Color(1, 0, 0, 1);
+        } else
+        {
+            ammoText.color = new Color(1, 1, 1, 1);
+        }
+        if (maxAmmo < 1)
+        {
+            maxAmmo = 1;
+        } else if (maxAmmo > 99999)
+        {
+            maxAmmo = 99999;
+        }
+        if (ammo < 0) //Checks if ammo is less than 0
+        {
+            ammo = 0;
+        } else if (ammo > maxAmmo) //Checks if ammo is more than the maximum
+        {
+            ammo = maxAmmo;
+        }
     }
 
     #region Input Functions
     void shoot(bool state)
     {
-        if (state)
+        if (!GameController.instance.gameOver && !GameController.instance.won && !GameController.instance.paused)
         {
-            if (ammo > 0 && Time.time >= nextShot)
+            if (state)
             {
-                if (!auto)
+                if (ammo > 0 && Time.time >= nextShot)
                 {
-                    if (!holding)
+                    if (!auto)
                     {
-                        StartCoroutine(fire(damage, RPM, spread, shots, bulletsFired));
+                        if (!holding)
+                        {
+                            StartCoroutine(fire(damage, RPM, spread, shots, bulletsFired));
+                            holding = true;
+                        }
+                    } else
+                    {
                         holding = true;
+                        StartCoroutine(autofire());
                     }
-                } else
-                {
-                    holding = true;
-                    StartCoroutine(autofire());
                 }
+            } else
+            {
+                holding = false;
+                StopCoroutine(autofire());
             }
-        } else
-        {
-            holding = false;
-            StopCoroutine(autofire());
         }
     }
     #endregion
@@ -95,7 +119,7 @@ public class PlayerGun : MonoBehaviour
     #region Main Functions
     IEnumerator fire(long damage, float RPM, float spread, int shots, int bulletsFired)
     {
-        if (!firing)
+        if (!firing && !GameController.instance.gameOver && !GameController.instance.won && !GameController.instance.paused)
         {
             int c = 0;
             int shotsToFire = bulletsFired;
