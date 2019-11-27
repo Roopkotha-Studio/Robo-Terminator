@@ -619,7 +619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5549803980229789384}
-  - component: {fileID: 5549803980219613860}
+  - component: {fileID: -6609539261314730981}
   - component: {fileID: 5549803980229630699}
   - component: {fileID: 488058576152633119}
   - component: {fileID: 5549803980229630698}
@@ -657,22 +657,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &5549803980219613860
-Animation:
+--- !u!95 &-6609539261314730981
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5549803980229630696}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400002, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
-  m_Animations:
-  - {fileID: 7400002, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 9000000, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
+  m_Controller: {fileID: 9100000, guid: 9a246c397e393944592c2ec8be1b166e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!195 &5549803980229630699
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -737,6 +740,7 @@ MonoBehaviour:
   attackTime: 0.5
   aggroDistance: 35
   attackDistance: 2
+  deathAnimation: death1
 --- !u!114 &5903035835057780889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,8 +753,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c18755a453c60e4a935e383a83b4a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 90
+  maxHealth: 60
+  useDeathAnim: 1
+  sound: {fileID: 0}
   bloodPoint: {fileID: 5549803980229789508}
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  dead: 0
+  dot: {fileID: 0}
 --- !u!114 &7694925252587758396
 MonoBehaviour:
   m_ObjectHideFlags: 0

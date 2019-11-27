@@ -26644,6 +26644,7 @@ MonoBehaviour:
   attackTime: 1
   aggroDistance: 25
   attackDistance: 4
+  deathAnimation: 
 --- !u!114 &8352036118697654129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26656,8 +26657,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c18755a453c60e4a935e383a83b4a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 600
+  maxHealth: 1000
+  useDeathAnim: 1
+  sound: {fileID: 0}
   bloodPoint: {fileID: 400126}
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  dead: 0
+  dot: {fileID: 0}
 --- !u!114 &-164141475250041662
 MonoBehaviour:
   m_ObjectHideFlags: 0

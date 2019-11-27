@@ -107,6 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammo: 15
+  weapon: 0
+  sound: {fileID: 2967402941179252019, guid: 67a33e3a6e134ea4ab3a99a62135e6b0, type: 3}
 --- !u!114 &7355894918790007896
 MonoBehaviour:
   m_ObjectHideFlags: 0

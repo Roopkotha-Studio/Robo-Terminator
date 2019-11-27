@@ -341,7 +341,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Default Material
-    second: {fileID: 2100000, guid: 72527571d2976774f97c1b810b655e36, type: 2}
+    second: {fileID: 2100000, guid: eb799f0b67fa43f4eba0152f587e8d97, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -369,7 +369,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -379,8 +379,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

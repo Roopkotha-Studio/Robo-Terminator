@@ -3,7 +3,16 @@ guid: bc5b48649d0ce9d4eaf64f1688a52a41
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - buttonClick: {instanceID: 0}
+  - mainMenu: {instanceID: 0}
+  - settingsMenu: {instanceID: 0}
+  - graphicsQualityMenu: {instanceID: 0}
+  - soundMenu: {instanceID: 0}
+  - loadingScreen: {instanceID: 0}
+  - loadingSlider: {instanceID: 0}
+  - loadingPercentage: {instanceID: 0}
+  - audioMixer: {fileID: 24100000, guid: 834cede00e98abb4887b0b442d51395d, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

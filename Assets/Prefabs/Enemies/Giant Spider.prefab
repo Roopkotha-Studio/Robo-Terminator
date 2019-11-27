@@ -1785,7 +1785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400108}
-  - component: {fileID: 11100000}
+  - component: {fileID: -851962554054851949}
   - component: {fileID: 555675581265250541}
   - component: {fileID: 5842574376966569957}
   - component: {fileID: 7466180682341007979}
@@ -1815,22 +1815,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &11100000
-Animation:
+--- !u!95 &-851962554054851949
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100108}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400014, guid: 130cac6b96af6214296215324b5da188, type: 3}
-  m_Animations:
-  - {fileID: 7400014, guid: 130cac6b96af6214296215324b5da188, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 9000000, guid: 130cac6b96af6214296215324b5da188, type: 3}
+  m_Controller: {fileID: 9100000, guid: f6e153af850dc3041a6e93925343e5bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!195 &555675581265250541
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1895,6 +1898,7 @@ MonoBehaviour:
   attackTime: 0.75
   aggroDistance: 35
   attackDistance: 4.5
+  deathAnimation: 
 --- !u!114 &845460781260875453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1907,8 +1911,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c18755a453c60e4a935e383a83b4a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 600
+  maxHealth: 600
+  useDeathAnim: 1
+  sound: {fileID: 0}
   bloodPoint: {fileID: 400106}
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  dead: 0
+  dot: {fileID: 0}
 --- !u!114 &8108895628571601718
 MonoBehaviour:
   m_ObjectHideFlags: 0

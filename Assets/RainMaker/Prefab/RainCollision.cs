@@ -16,16 +16,6 @@ namespace DigitalRuby.RainMaker
         public ParticleSystem RainExplosion;
         public ParticleSystem RainParticleSystem;
 
-        private void Start()
-        {
-
-        }
-
-        private void Update()
-        {
-
-        }
-
         private void Emit(ParticleSystem p, ref Vector3 pos)
         {
             int count = UnityEngine.Random.Range(2, 5);

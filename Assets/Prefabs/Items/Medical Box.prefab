@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heal: 15
+  sound: {fileID: 2967402941179252019, guid: 02ddc89558b2aec46b9a1e284b5db71b, type: 3}
 --- !u!1 &185086
 GameObject:
   m_ObjectHideFlags: 0

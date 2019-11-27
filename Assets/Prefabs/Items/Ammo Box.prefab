@@ -138,6 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammo: 20
+  weapon: 1
+  sound: {fileID: 2967402941179252019, guid: 67a33e3a6e134ea4ab3a99a62135e6b0, type: 3}
 --- !u!1 &2920588642050224418
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
+    [Header("Credits Settings")]
+    [Tooltip("The Y position credits start at.")] [SerializeField] private float creditsY = 450;
+    [SerializeField] private float creditsScrollSpeed = 0.5f;
+    [SerializeField] private float creditsFastSpeed = 1;
+
     [Header("Sound Effects")]
     [SerializeField] private AudioClip buttonClick = null;
 
@@ -14,17 +19,22 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Canvas settingsMenu = null;
     [SerializeField] private Canvas graphicsQualityMenu = null;
     [SerializeField] private Canvas soundMenu = null;
+    [SerializeField] private Canvas creditsMenu = null;
+    [SerializeField] private RectTransform credits = null;
     [SerializeField] private GameObject loadingScreen = null;
     [SerializeField] private Slider loadingSlider = null;
     [SerializeField] private Text loadingPercentage = null;
     [SerializeField] private AudioMixer audioMixer = null;
 
     private AudioSource audioSource;
+    private Controls input;
+    private bool fastCredits = false;
     private bool loading = false;
 
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        input = new Controls();
         if (audioSource) audioSource.ignoreListenerPause = true;
         loading = false;
         Time.timeScale = 1;
@@ -49,16 +59,58 @@ public class MainMenuManager : MonoBehaviour
         settingsMenu.enabled = false;
         graphicsQualityMenu.enabled = false;
         soundMenu.enabled = false;
+        creditsMenu.enabled = false;
+    }
+
+    void OnEnable()
+    {
+        input.Enable();
+        input.Gameplay.CloseMenu.performed += context => closeMenu();
+        input.Menu.SpeedUpCredits.performed += context => speedUpCredits(true);
+        input.Menu.SpeedUpCredits.canceled += context => speedUpCredits(false);
+    }
+
+    void OnDisable()
+    {
+        input.Disable();
+        input.Gameplay.CloseMenu.performed -= context => closeMenu();
+        input.Menu.SpeedUpCredits.performed -= context => speedUpCredits(true);
+        input.Menu.SpeedUpCredits.canceled -= context => speedUpCredits(false);
     }
 
     void Update()
     {
+        if (!creditsMenu.enabled) credits.anchoredPosition = new Vector2(0, creditsY);
         if (!loading)
         {
             loadingScreen.SetActive(false);
         } else
         {
             loadingScreen.SetActive(true);
+        }
+    }
+
+    #region Main Functions
+    IEnumerator scrollCredits()
+    {
+        while (creditsMenu.enabled)
+        {
+            yield return new WaitForEndOfFrame();
+            float speed = creditsScrollSpeed;
+            if (!fastCredits)
+            {
+                speed = creditsScrollSpeed;
+            } else
+            {
+                speed = creditsFastSpeed;
+            }
+            if (creditsMenu.enabled) credits.anchoredPosition -= new Vector2(0, speed);
+            if (credits.anchoredPosition.y <= -creditsY)
+            {
+                mainMenu.enabled = true;
+                creditsMenu.enabled = false;
+                yield break;
+            }
         }
     }
 
@@ -86,10 +138,41 @@ public class MainMenuManager : MonoBehaviour
                 settingsMenu.enabled = false;
                 graphicsQualityMenu.enabled = false;
                 soundMenu.enabled = false;
+                creditsMenu.enabled = false;
                 yield return null;
             }
         }
     }
+    #endregion
+
+    #region Input Functions
+    void closeMenu()
+    {
+        if (settingsMenu.enabled)
+        {
+            settingsMenu.enabled = false;
+            mainMenu.enabled = true;
+        } else if (graphicsQualityMenu.enabled)
+        {
+            graphicsQualityMenu.enabled = false;
+            settingsMenu.enabled = true;
+        } else if (soundMenu.enabled)
+        {
+            soundMenu.enabled = false;
+            settingsMenu.enabled = true;
+        } else if (creditsMenu.enabled)
+        {
+            creditsMenu.enabled = false;
+            mainMenu.enabled = true;
+            StopCoroutine(scrollCredits());
+        }
+    }
+
+    void speedUpCredits(bool state)
+    {
+        fastCredits = state;
+    }
+    #endregion
 
     #region Menu Functions
     public void startGame(int level)
@@ -153,7 +236,32 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
-    public void quitGame()
+    public void openCredits()
+    {
+        if (audioSource)
+        {
+            if (buttonClick)
+            {
+                audioSource.PlayOneShot(buttonClick);
+            } else
+            {
+                audioSource.Play();
+            }
+        }
+        if (!creditsMenu.enabled)
+        {
+            creditsMenu.enabled = true;
+            mainMenu.enabled = false;
+            StartCoroutine(scrollCredits());
+        } else
+        {
+            creditsMenu.enabled = false;
+            mainMenu.enabled = true;
+            StopCoroutine(scrollCredits());
+        }
+    }
+
+    public void exitGame()
     {
         if (audioSource)
         {

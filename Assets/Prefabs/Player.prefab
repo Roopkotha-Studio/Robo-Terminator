@@ -225,7 +225,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -277,10 +277,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00991149e4dd7594a960af3bc198570d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 15
   RPM: 50
   spread: 0.05
-  ammo: 50
+  ammo: 64
   maxAmmo: 64
   shots: 8
   bulletsFired: 1
@@ -555,7 +555,7 @@ GameObject:
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6434065688569889157
 Transform:
@@ -585,7 +585,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c6acf3f29c109e4439950c8f6a85cb2b, type: 3}
   m_Controller: {fileID: 9100000, guid: 43188e0c08dcf474a9e6f159270e3897, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
@@ -740,16 +740,30 @@ MonoBehaviour:
   invertHorizontal: 1
   invertVertical: 1
   flipMovement: 0
+  healthBar: {fileID: 0}
   healthText: {fileID: 0}
   damageOverlay: {fileID: 0}
   message: {fileID: 0}
-  isHealthFull: 1
+  hurtSounds:
+  - {fileID: 8300000, guid: 991c0d988cf141d4da1d3aed06d2d616, type: 3}
+  - {fileID: 8300000, guid: fee62c7f59ae3684eabfa1b16bdb3672, type: 3}
+  - {fileID: 8300000, guid: 8eaf78e8241bd8f4580e1a2202ce42a2, type: 3}
+  - {fileID: 8300000, guid: a84a41dffd30e384185642a0724ef85f, type: 3}
+  - {fileID: 8300000, guid: 1e8606a526bfa7247838849a3eb4324e, type: 3}
+  - {fileID: 8300000, guid: 4ece34cb733a5524dbc86717f0f26fb2, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: cdfb47c8110ac6d4d8783f7ba998fd0e, type: 3}
+  - {fileID: 8300000, guid: a889fd884c411574cbb9d191595817a4, type: 3}
+  - {fileID: 8300000, guid: d9f1ae6b83ecb2f4e9387b176f0ecd4d, type: 3}
+  - {fileID: 8300000, guid: c6700708c62482249a89d00ff2229cde, type: 3}
+  - {fileID: 8300000, guid: 03fb72b7606192a4ab190c424e724cbd, type: 3}
   weapons:
   - {fileID: 6434065689038694102}
   - {fileID: 6495624480188432356}
   - {fileID: 2715498471828183267}
   blood: {fileID: 1240250018707908, guid: 5656e7ea1f1a75d4c895547ec2b824b3, type: 3}
   bloodPoint: {fileID: 6290551478023294571}
+  health: 0
   weapon: 0
   hasPistol: 1
   hasAssaultRifle: 0
@@ -1044,7 +1058,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1096,11 +1110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00991149e4dd7594a960af3bc198570d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 18
   RPM: 500
   spread: 0.05
   ammo: 50
-  maxAmmo: 180
+  maxAmmo: 200
   shots: 1
   bulletsFired: 1
   auto: 0
@@ -1383,16 +1397,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6434065689587768620}
-  m_LocalRotation: {x: -0.50000036, y: 0.49999964, z: 0.49999964, w: 0.50000036}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
   m_LocalPosition: {x: -0.0000000015575574, y: 1.2235097, z: -0.035632763}
-  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6434065689571706152}
   - {fileID: 6434065688977989711}
   - {fileID: 6290551478023294571}
   m_Father: {fileID: 6434065688569889157}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: -180, z: -90}
 --- !u!1 &6434065689672240399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,7 +1846,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1884,11 +1898,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00991149e4dd7594a960af3bc198570d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 23
   RPM: 600
   spread: 0.05
-  ammo: 50
-  maxAmmo: 60
+  ammo: 200
+  maxAmmo: 200
   shots: 1
   bulletsFired: 1
   auto: 1
@@ -1909,7 +1923,7 @@ GameObject:
   - component: {fileID: 1032800213114782037}
   - component: {fileID: 5136143505390728795}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: MinimapCamera
   m_TagString: MinimapCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1956,7 +1970,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 15
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1982,7 +1996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6290551478023294571}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: BloodPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 1452520bceba5294fbe4ab486897cda0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gameHUD: {instanceID: 0}
+  - gamePausedMenu: {instanceID: 0}
+  - gameOverMenu: {instanceID: 0}
+  - levelCompletedMenu: {instanceID: 0}
+  - settingsMenu: {instanceID: 0}
+  - graphicsQualityMenu: {instanceID: 0}
+  - soundMenu: {instanceID: 0}
+  - enemiesLeftText: {instanceID: 0}
+  - mainText: {instanceID: 0}
+  - loadingScreen: {instanceID: 0}
+  - loadingSlider: {instanceID: 0}
+  - loadingPercentage: {instanceID: 0}
+  - buttonClick: {instanceID: 0}
+  - audioMixer: {fileID: 24100000, guid: 834cede00e98abb4887b0b442d51395d, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -70,7 +70,7 @@ NavMeshAgent:
   m_Acceleration: 7
   avoidancePriority: 50
   m_AngularSpeed: 150
-  m_StoppingDistance: 0
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -120,6 +120,7 @@ MonoBehaviour:
   attackTime: 0.5
   aggroDistance: 35
   attackDistance: 2
+  deathAnimation: 
 --- !u!114 &-6304302070908583804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,8 +133,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c18755a453c60e4a935e383a83b4a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 70
+  maxHealth: 55
+  useDeathAnim: 1
+  sound: {fileID: 0}
   bloodPoint: {fileID: 400058}
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  dead: 0
+  dot: {fileID: 0}
 --- !u!114 &-2507388517838850230
 MonoBehaviour:
   m_ObjectHideFlags: 0

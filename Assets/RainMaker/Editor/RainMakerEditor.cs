@@ -4,7 +4,6 @@
 //
 
 using System;
-
 using UnityEngine;
 using UnityEditor;
 
@@ -54,11 +53,6 @@ namespace DigitalRuby.RainMaker
 
     [CustomEditor(typeof(RainScript))]
     public class RainMakerEditor3D : RainMakerEditor
-    {
-    }
-
-    [CustomEditor(typeof(RainScript2D))]
-    public class RainMakerEditor2D : RainMakerEditor
     {
     }
 }
