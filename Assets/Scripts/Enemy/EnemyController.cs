@@ -118,12 +118,11 @@ public class EnemyController : MonoBehaviour
             animator.SetBool("Walking", false);
             animator.SetTrigger("Die");
             c = true;
-            print("Found Animator");
         }
-        if (!c && animation)
+        if (!c && animation) //If no Animator was found
         {
-            animation.Play("death1");
-            print("No Animator");
+            animation.Play(deathAnimation);
+            c = true;
         }
     }
 }
