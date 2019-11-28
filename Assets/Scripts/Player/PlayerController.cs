@@ -54,8 +54,8 @@ public class PlayerController : MonoBehaviour
         walkSpeed = speed;
         weapon = 0;
         hasPistol = true;
-        hasAssaultRifle = true;
-        hasShotgun = true;
+        hasAssaultRifle = false;
+        hasShotgun = false;
         if (!bloodPoint) bloodPoint = transform;
         resetMessage();
     }
@@ -204,10 +204,13 @@ public class PlayerController : MonoBehaviour
 
     void turn(Vector2 direction)
     {
-        Vector3 lookDirection = new Vector3(direction.x, direction.y, 0);
-        Vector3 lookRotation = Camera.main.transform.TransformDirection(lookDirection);
-        lookRotation = Vector3.ProjectOnPlane(lookRotation, Vector3.up);
-        if (lookRotation != Vector3.zero) transform.rotation = Quaternion.LookRotation(lookRotation);
+        if (!dead)
+        {
+            Vector3 lookDirection = new Vector3(direction.x, direction.y, 0);
+            Vector3 lookRotation = Camera.main.transform.TransformDirection(lookDirection);
+            lookRotation = Vector3.ProjectOnPlane(lookRotation, Vector3.up);
+            if (lookRotation != Vector3.zero) transform.rotation = Quaternion.LookRotation(lookRotation);
+        }
     }
 
     void weaponHotkey(int newWeapon)
