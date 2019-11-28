@@ -26,7 +26,7 @@ public class MinimapDot : MonoBehaviour
             newDot.transform.SetParent(transform);
         } else
         {
-            Debug.LogError("Minimap camera not found");
+            Debug.LogError("Minimap camera not found!");
         }
         enabled = false;
     }
