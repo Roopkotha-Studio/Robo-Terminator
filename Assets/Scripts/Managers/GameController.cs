@@ -140,6 +140,13 @@ public class GameController : MonoBehaviour
         {
             loadingScreen.SetActive(true);
         }
+        if (PlayerPrefs.GetInt("Level") < 1)
+        {
+            PlayerPrefs.SetInt("Level", 1);
+        } else if (PlayerPrefs.GetInt("Level") > PlayerPrefs.GetInt("MaxLevels"))
+        {
+            PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("MaxLevels"));
+        }
     }
 
     #region Input Functions

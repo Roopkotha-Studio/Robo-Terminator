@@ -88,6 +88,13 @@ public class MainMenuManager : MonoBehaviour
         {
             loadingScreen.SetActive(true);
         }
+        if (PlayerPrefs.GetInt("Level") < 1)
+        {
+            PlayerPrefs.SetInt("Level", 1);
+        } else if (PlayerPrefs.GetInt("Level") > PlayerPrefs.GetInt("MaxLevels"))
+        {
+            PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("MaxLevels"));
+        }
     }
 
     #region Main Functions
@@ -187,7 +194,13 @@ public class MainMenuManager : MonoBehaviour
                 audioSource.Play();
             }
         }
-        StartCoroutine(loadScene("Level " + level));
+        if (PlayerPrefs.GetInt("Level") > 0)
+        {
+            StartCoroutine(loadScene("Level " + level));
+        } else
+        {
+            StartCoroutine(loadScene("Level 1"));
+        }
     }
 
     public void openCanvasFromMainMenu(Canvas canvas)

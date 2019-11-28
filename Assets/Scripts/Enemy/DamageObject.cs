@@ -11,7 +11,7 @@ public class DamageObject : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") && other.GetComponent<PlayerController>())
+        if (other.CompareTag("Player"))
         {
             PlayerController playerController = other.GetComponent<PlayerController>();
             if (playerController && playerController.health > 0)
