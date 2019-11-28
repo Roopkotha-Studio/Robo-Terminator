@@ -29,7 +29,7 @@ public class ThunderstormWeather : MonoBehaviour
     {
         float intensity = light.intensity;
         float shadowStrength = light.shadowStrength;
-        light.intensity = 666;
+        light.intensity = Mathf.Infinity;
         light.shadowStrength = 0;
         if (thunderAudio.Length > 0)
         {
