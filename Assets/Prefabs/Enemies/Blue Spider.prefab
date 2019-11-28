@@ -53,7 +53,7 @@ Animation:
   m_Animations:
   - {fileID: -3419257869308726280, guid: d97b025b4f6d2964e929ae3f8fdc85f1, type: 3}
   m_WrapMode: 0
-  m_PlayAutomatically: 0
+  m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!195 &758876719656354329
@@ -134,8 +134,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 55
-  useDeathAnim: 1
-  sound: {fileID: 0}
+  deathPositionY: 0.5
+  deathRotationZ: 180
+  deathType: 1
+  effect: {fileID: 0}
   bloodPoint: {fileID: 400058}
   hurtSound: {fileID: 0}
   deathSound: {fileID: 0}

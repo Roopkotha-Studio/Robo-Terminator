@@ -472,11 +472,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 130
-  useDeathAnim: 0
-  sound: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3, type: 3}
+  deathPositionY: 0.5
+  deathRotationZ: 180
+  deathType: 2
+  effect: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3, type: 3}
   bloodPoint: {fileID: 4846996839601922}
   hurtSound: {fileID: 0}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 3a208916e20c32045a4e5ec45b63d740, type: 3}
   dead: 0
   dot: {fileID: 0}
 --- !u!114 &4698483587994523780
