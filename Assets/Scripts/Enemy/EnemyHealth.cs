@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float deathPositionY = 0.5f;
     [SerializeField] private float deathRotationZ = 180;
     [SerializeField] private DeathTypes deathType = DeathTypes.Animated;
-    private GameObject effect = null;
+    [SerializeField] private GameObject effect = null;
     public Transform bloodPoint;
 
     [Header("Sound Effects")]
