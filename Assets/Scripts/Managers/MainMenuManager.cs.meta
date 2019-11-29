@@ -4,11 +4,13 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - buttonClick: {instanceID: 0}
+  - buttonClick: {fileID: 8300000, guid: 82bfe59fc2504a84bbfe1bc2a5729722, type: 3}
   - mainMenu: {instanceID: 0}
   - settingsMenu: {instanceID: 0}
   - graphicsQualityMenu: {instanceID: 0}
   - soundMenu: {instanceID: 0}
+  - creditsMenu: {instanceID: 0}
+  - credits: {instanceID: 0}
   - loadingScreen: {instanceID: 0}
   - loadingSlider: {instanceID: 0}
   - loadingPercentage: {instanceID: 0}

@@ -11,12 +11,13 @@ MonoImporter:
   - settingsMenu: {instanceID: 0}
   - graphicsQualityMenu: {instanceID: 0}
   - soundMenu: {instanceID: 0}
+  - quitGameMenu: {instanceID: 0}
   - enemiesLeftText: {instanceID: 0}
-  - mainText: {instanceID: 0}
+  - levelNameText: {instanceID: 0}
   - loadingScreen: {instanceID: 0}
   - loadingSlider: {instanceID: 0}
   - loadingPercentage: {instanceID: 0}
-  - buttonClick: {instanceID: 0}
+  - buttonClick: {fileID: 8300000, guid: 82bfe59fc2504a84bbfe1bc2a5729722, type: 3}
   - audioMixer: {fileID: 24100000, guid: 834cede00e98abb4887b0b442d51395d, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
