@@ -179,7 +179,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8167172507196957589, guid: 834cede00e98abb4887b0b442d51395d,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 11f2480f7a9a90142a26f474bce75566, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8ef265a984ea4b0449d2aac9ed7b982c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -278,15 +278,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 15
-  RPM: 50
+  RPM: 55
   spread: 0.05
-  ammo: 64
+  ammo: 8
   maxAmmo: 64
   shots: 8
   bulletsFired: 1
   auto: 0
   ammoText: {fileID: 0}
-  fireSound: {fileID: 8300000, guid: 11f2480f7a9a90142a26f474bce75566, type: 3}
   muzzle: {fileID: 474115366862445408}
   blood: {fileID: 1240250018707908, guid: 5656e7ea1f1a75d4c895547ec2b824b3, type: 3}
   bulletHole: {fileID: 46081792123162159, guid: 98667270791b86f4aba6725c5a045197,
@@ -1012,7 +1011,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8167172507196957589, guid: 834cede00e98abb4887b0b442d51395d,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 11f2480f7a9a90142a26f474bce75566, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7d06e4e17ac3b7b48a264e5df140a794, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1113,13 +1112,12 @@ MonoBehaviour:
   damage: 18
   RPM: 500
   spread: 0.05
-  ammo: 50
-  maxAmmo: 200
+  ammo: 45
+  maxAmmo: 180
   shots: 1
   bulletsFired: 1
   auto: 0
   ammoText: {fileID: 0}
-  fireSound: {fileID: 8300000, guid: 11f2480f7a9a90142a26f474bce75566, type: 3}
   muzzle: {fileID: 2727708922577497469}
   blood: {fileID: 1240250018707908, guid: 5656e7ea1f1a75d4c895547ec2b824b3, type: 3}
   bulletHole: {fileID: 46081792123162159, guid: 98667270791b86f4aba6725c5a045197,
@@ -1800,7 +1798,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8167172507196957589, guid: 834cede00e98abb4887b0b442d51395d,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 11f2480f7a9a90142a26f474bce75566, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0232acf4624713449ae316a33b18a86d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1901,13 +1899,12 @@ MonoBehaviour:
   damage: 23
   RPM: 600
   spread: 0.05
-  ammo: 200
-  maxAmmo: 200
+  ammo: 30
+  maxAmmo: 300
   shots: 1
   bulletsFired: 1
   auto: 1
   ammoText: {fileID: 0}
-  fireSound: {fileID: 8300000, guid: 11f2480f7a9a90142a26f474bce75566, type: 3}
   muzzle: {fileID: 1020707756284162263}
   blood: {fileID: 1240250018707908, guid: 5656e7ea1f1a75d4c895547ec2b824b3, type: 3}
   bulletHole: {fileID: 46081792123162159, guid: 98667270791b86f4aba6725c5a045197,
