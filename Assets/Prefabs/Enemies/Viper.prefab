@@ -1149,9 +1149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c18755a453c60e4a935e383a83b4a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
-  useDeathAnim: 1
-  sound: {fileID: 0}
+  maxHealth: 30
+  deathPositionY: 0.5
+  deathRotationZ: 180
+  deathType: 0
   bloodPoint: {fileID: 4813575816450814}
   hurtSound: {fileID: 0}
   deathSound: {fileID: 0}
