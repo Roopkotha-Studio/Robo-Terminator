@@ -1343,7 +1343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c18755a453c60e4a935e383a83b4a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 115
+  maxHealth: 120
   deathPositionY: 0.5
   deathRotationZ: 180
   deathType: 2
