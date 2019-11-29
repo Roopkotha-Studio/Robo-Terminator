@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 4147860716890915036}
   - component: {fileID: 1138127027770127054}
   - component: {fileID: 1138127027770127053}
+  - component: {fileID: -1671907870671472809}
   m_Layer: 2
   m_Name: Ammo Box
   m_TagString: AssaultRifle
@@ -140,6 +141,19 @@ MonoBehaviour:
   ammo: 20
   weapon: 1
   sound: {fileID: 2967402941179252019, guid: 67a33e3a6e134ea4ab3a99a62135e6b0, type: 3}
+--- !u!114 &-1671907870671472809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138127027770127055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f00d989e81562044b521de10457cae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dot: {fileID: 7645377270196061444, guid: 9e915a08a5b37bc4d8104658f66d1b09, type: 3}
 --- !u!1 &2920588642050224418
 GameObject:
   m_ObjectHideFlags: 0

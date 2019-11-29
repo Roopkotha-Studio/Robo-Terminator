@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 457534}
   - component: {fileID: 2991452538583058370}
   - component: {fileID: 5409849023185752544}
+  - component: {fileID: 2447327412442741066}
   m_Layer: 2
   m_Name: Medical Box
   m_TagString: Untagged
@@ -139,6 +140,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heal: 15
   sound: {fileID: 2967402941179252019, guid: 02ddc89558b2aec46b9a1e284b5db71b, type: 3}
+--- !u!114 &2447327412442741066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f00d989e81562044b521de10457cae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dot: {fileID: 7645377270196061444, guid: 9e915a08a5b37bc4d8104658f66d1b09, type: 3}
 --- !u!1 &185086
 GameObject:
   m_ObjectHideFlags: 0
