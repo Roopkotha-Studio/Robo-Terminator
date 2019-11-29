@@ -16,9 +16,6 @@ public class PlayerGun : MonoBehaviour
     [Header("UI")]
     [SerializeField] private Text ammoText = null;
 
-    [Header("Sound Effects")]
-    [SerializeField] private AudioClip fireSound = null;
-
     [Header("Setup")]
     [SerializeField] private Transform muzzle = null;
     [SerializeField] private GameObject blood = null;
@@ -133,7 +130,7 @@ public class PlayerGun : MonoBehaviour
                     --ammo;
                     nextShot = Time.time + 60 / RPM;
                     if (muzzleLight) muzzleLight.enabled = true;
-                    if (audioSource && fireSound) audioSource.PlayOneShot(fireSound);
+                    if (audioSource) audioSource.PlayOneShot(audioSource.clip);
                     CancelInvoke("resetEffects");
                     Invoke("resetEffects", 0.075f);
                     for (int i = 0; i < shots; i++)
