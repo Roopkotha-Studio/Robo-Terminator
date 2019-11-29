@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2084498792664356113}
   - component: {fileID: 5503327769886638465}
   - component: {fileID: 2024464908714916311}
+  - component: {fileID: -3346206116780304930}
   m_Layer: 2
   m_Name: Shell Box
   m_TagString: Shotgun
@@ -88,7 +89,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121759931232068271}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 7
@@ -108,3 +109,16 @@ MonoBehaviour:
   ammo: 8
   weapon: 2
   sound: {fileID: 2967402941179252019, guid: 67a33e3a6e134ea4ab3a99a62135e6b0, type: 3}
+--- !u!114 &-3346206116780304930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121759931232068271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f00d989e81562044b521de10457cae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dot: {fileID: 7645377270196061444, guid: 9e915a08a5b37bc4d8104658f66d1b09, type: 3}
