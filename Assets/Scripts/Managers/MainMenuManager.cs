@@ -182,7 +182,7 @@ public class MainMenuManager : MonoBehaviour
     #endregion
 
     #region Menu Functions
-    public void startGame(int level)
+    public void startGame()
     {
         if (audioSource)
         {
@@ -196,7 +196,7 @@ public class MainMenuManager : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("Level") > 0)
         {
-            StartCoroutine(loadScene("Level " + level));
+            StartCoroutine(loadScene("Level " + PlayerPrefs.GetInt("Level")));
         } else
         {
             StartCoroutine(loadScene("Level 1"));
