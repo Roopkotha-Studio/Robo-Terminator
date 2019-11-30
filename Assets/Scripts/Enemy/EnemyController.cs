@@ -88,26 +88,7 @@ public class EnemyController : MonoBehaviour
     
     void OnDrawGizmos()
     {
-        string s = name.ToLower();
-        if (s.Contains("spider"))
-        {
-            Gizmos.DrawIcon(transform.position, "spider.png", false);
-        } else if (s.Contains("scorpion"))
-        {
-            Gizmos.DrawIcon(transform.position, "scorpion.png", false);
-        } else if (s.Contains("raz"))
-        {
-            Gizmos.DrawIcon(transform.position, "alien.png", false);
-        } else if (s.Contains("alien"))
-        {
-            Gizmos.DrawIcon(transform.position, "alien.png", false);
-        } else if (s.Contains("robot"))
-        {
-            Gizmos.DrawIcon(transform.position, "support.png", false);
-        } else
-        {
-            Gizmos.DrawIcon(transform.position, "enemy.png", false);
-        }
+        Gizmos.DrawIcon(transform.position, "enemy.png", false);
     }
     
     public void playDeathAnimation()
