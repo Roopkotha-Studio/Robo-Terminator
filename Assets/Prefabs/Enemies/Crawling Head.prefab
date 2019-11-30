@@ -484,7 +484,7 @@ MonoBehaviour:
   maxHealth: 800
   deathPositionY: 0.5
   deathRotationZ: 180
-  deathType: 0
+  deathType: 2
   effect: {fileID: 0}
   bloodPoint: {fileID: 4361889905839110036}
   hurtSound: {fileID: 0}
