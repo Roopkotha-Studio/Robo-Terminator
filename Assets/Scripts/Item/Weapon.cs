@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class GetWeapon : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
     private bool valid = true;
 
@@ -10,9 +10,6 @@ public class GetWeapon : MonoBehaviour
         {
             Gizmos.DrawIcon(transform.position, "gun.png", false);
         } else if (CompareTag("AssaultRifle"))
-        {
-            Gizmos.DrawIcon(transform.position, "assault-rifle.png", false);
-        } else if (CompareTag("BurstRifle"))
         {
             Gizmos.DrawIcon(transform.position, "assault-rifle.png", false);
         } else if (CompareTag("Shotgun"))
