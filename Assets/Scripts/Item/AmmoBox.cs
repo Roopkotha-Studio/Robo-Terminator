@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class AmmoGiver : MonoBehaviour
+public class AmmoBox : MonoBehaviour
 {
     [SerializeField] private int ammo = 30;
     [SerializeField] private int weapon = 0;
