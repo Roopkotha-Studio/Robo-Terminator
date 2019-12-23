@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TouchMedkit : MonoBehaviour
+public class Medkit : MonoBehaviour
 {
     [SerializeField] private long heal = 15;
     [SerializeField] private GameObject sound = null;
